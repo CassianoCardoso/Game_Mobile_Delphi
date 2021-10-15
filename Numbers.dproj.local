@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/08/03 20:27:14.000.100,=C:\Users\Cassiano\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/10/14 20:48:53.172,=C:\Users\Cassiano\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/10/14 20:54:06.766,E:\DELPHI\Criando um game mobile em Delphi\UnitMenu.pas=C:\Users\Cassiano\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/10/14 20:54:06.766,E:\DELPHI\Criando um game mobile em Delphi\UnitMenu.fmx=C:\Users\Cassiano\Documents\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
+    <Transaction>2021/10/14 20:54:19.551,E:\DELPHI\Criando um game mobile em Delphi\Numbers.dproj=C:\Users\Cassiano\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2021/10/14 21:19:57.521,=E:\DELPHI\Criando um game mobile em Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/10/14 21:21:38.745,E:\DELPHI\Criando um game mobile em Delphi\UnitPrincipal.pas=E:\DELPHI\Criando um game mobile em Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/10/14 21:21:38.745,E:\DELPHI\Criando um game mobile em Delphi\UnitPrincipal.fmx=E:\DELPHI\Criando um game mobile em Delphi\Unit1.fmx</Transaction>
+  </Transactions>  <ActiveMobileDevice>   <NoProfile Android="HAAZB6002734JBZ"/>
+  </ActiveMobileDevice>
+</BorlandProject>

@@ -1,0 +1,14 @@
+program Numbers;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  UnitMenu in 'UnitMenu.pas' {frmaNumbers};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TfrmaNumbers, frmaNumbers);
+  Application.Run;
+end.
