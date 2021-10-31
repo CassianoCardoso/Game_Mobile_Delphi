@@ -129,7 +129,7 @@ begin
           // i pega o objeto quadrado vazio
     for i := 0 to GridLayout.ChildrenCount -1 do
       begin
-        lbl := TLabel(TRectangle(GridLayout.Children[i]).Children[0]);
+        lbl := TLabel(TRectangle(GridLayout.Children[i]).Children);
 
         if lbl.Tag = 0 then
         begin

@@ -2,8 +2,8 @@ object frmPrincipal: TfrmPrincipal
   Left = 0
   Top = 0
   Caption = 'Numbers'
-  ClientHeight = 603
-  ClientWidth = 371
+  ClientHeight = 602
+  ClientWidth = 330
   Fill.Bitmap.Bitmap.PNG = {
     89504E470D0A1A0A0000000D4948445200000258000004380806000000D542A2
     BC000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
@@ -736,13 +736,16 @@ object frmPrincipal: TfrmPrincipal
     FC47FFFEEAF4EFFE9DD5FF0F669071B083C63F6F0000000049454E44AE426082}
   Fill.Bitmap.WrapMode = TileStretch
   Fill.Kind = Bitmap
+  Position = MainFormCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnResize = FormResize
+  OnShow = FormShow
   DesignerMasterStyle = 0
   object lytToolbar: TLayout
     Align = Top
-    Size.Width = 371.000000000000000000
+    Size.Width = 330.000000000000000000
     Size.Height = 120.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
@@ -752,7 +755,7 @@ object frmPrincipal: TfrmPrincipal
       Margins.Top = 15.000000000000000000
       Margins.Right = 15.000000000000000000
       Margins.Bottom = 15.000000000000000000
-      Position.X = 227.000000000000000000
+      Position.X = 186.000000000000000000
       Position.Y = 15.000000000000000000
       Size.Width = 129.000000000000000000
       Size.Height = 90.000000000000000000
@@ -817,37 +820,38 @@ object frmPrincipal: TfrmPrincipal
             PNG = {
               89504E470D0A1A0A0000000D4948445200000080000000800806000000C33E61
               CB000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
-              03C449444154785EEDDD4B888D711CC6F139335158B041B94558101BC94E6EB9
-              E4B69194100B1992AD46AC886CA54116849464E3964B6ED949566243E4B2C086
-              058ACEBC9E7FF3A8D369CE3867A6D4FBFF7D3FF5F6BEE7B17C9EF73D67D2CC69
-              0300000000000000000000000000000000000000000000000000201345510CF5
-              25A2E9E9E9995DAD563FEBBCC311A250E93355FE273D010A9DEF3B46042A7FBA
-              4AFF98CAB7A7FEA7D26BF7190DA8FC692AFC417B7BFB3847596100FD50F19374
-              DC55F9E31D65870134A03B7FA28E872A7FB2A32C31803EA8F8097EEC4F71942D
-              065047E58F55F97754FE54475963003554FE18957F5FE5CF70943D06602A7FB4
-              CABFA7F2673A0A8101888A1FA5E396CA9FE5288CF00348E5EBEE4F3FEACD7114
-              4AE801A8FC912AFFB6CA9FEB289CB00350F123745C53F9F31C85147200BAF387
-              572A951B2A7FBEA3B0C20D2095AF3BFFBA2E17F426B1851A808A1FE6C7FE2247
-              E1851980EEFCA13A2EABFCC58E20210690CAD79D7F45E5AF7204CB7E002A7F88
-              CA4F77FE6A47A891F500547E87CA3FAFF2D73A429D6C07E0F2CFA9FC0D8ED087
-              2C07E0F2CFAAFC8D8ED040760350F915957F42E56F72847E64350097DFADF2B7
-              3BC23F643300977F5CE5773A4213B21880CB3FA6F2773942937279021C51F9BB
-              7D8D16947E00D56AF5B04E7B7B5FA155A51E80CA3FA83BBFCB2F3100A51D80DE
-              F33B55FE7EBFC400957600FAE0B7CD97188432BF05143E63104A3B804AA572C6
-              971884D20E40EFFFA7F439E0905F6280CAFC16D0D6D1D171402338E297188052
-              0F20D108F6E974B4F7155A55FA015857FA7F005FA305590C401F080B7D26D8A3
-              11743B4293727902FC1DC16E8DE0A42334219B01241EC12E8DE0B423FC435603
-              483C829D1AC10547E8477603483482AA46B05523B8E8080D643980C423D8A211
-              5C72843E643B80C423D8AC115C75843A590F20D1087E6B04EB3582F41BC1A893
-              FD00128DE09746B04E23B8E108166200491A818EF424E02F7DD7083380444F81
-              9F3AD668040F1C85176A00899E023F3482F49BC28F7A93D8C20D204923288A62
-              959E048F1D85157200899E02DFFD76F0C45148610790E849F04D2358AE1164F3
-              0D20AD0A3D804423F8AA112CD5089E390A25FC009234021D2B3482E78EC26000
-              A6A7C0178D608946F0C251080CA08646F0592358AC11BC74943D06504723F8A4
-              112CD3085E3BCA1A03E88346F0412358A411BC71942D06D08046F05EC7428DE0
-              ADA32C31807EE829F04E47FA11F1A32344A40164FBD5B168924650FBE5D1371D
-              23128D207D7DFC2B9D573A020000000000000000000000000000000000000000
-              F88FDADAFE0090259202B2A629490000000049454E44AE426082}
+              03D449444154785EEDDD3F685D651CC6F1DC7B30601DEA620BDA868A7630D4A5
+              143791446AA5312E2285628B1D8A31045769B153C5D0B584A8385454041197C6
+              887F30A9B815712ABAB404C40C894B3BB482BD27C7E7258F70B9DC24F726209C
+              F7F7FDC0E1DCFB747C9EF3DE6448EF0000000000000000000000000000000000
+              0000000000000000000099A8AA6AD02F11CDDADADAD3AD566B55F7371C210A95
+              3EACF25774025465592E3846042AFFA0CA5F4EE5DB2FFEA7DA6BFA8E0DA8FC27
+              752D1645F1A8A3AC30804DE8491F52F93FA8FCC71C6587016C40C5EFD767FD35
+              957FC051961840172A7F9F8FFDC71D658B017450F17B757DAFF29F70943506D0
+              46C5EFD1B5A0F29F72943D06602AFE115D3FAAFC6147213000D14FFB0FABFC6F
+              55FE214761841F402A5F3FEDA75FF50E3B0A25F40054FE6E95FF9DCA3FE2289C
+              B003D091FF90CA9F53F9CF380A29E400F4E4EF6A341AF32AFF594761851B402A
+              5F4FFFD77AF9DC7A125BA801A8F80775CD359BCD1147E18519809EFC415D5FAA
+              FC514790100348E5EBC9FF4AE58F3982653F0095FF80CA4F4FFE4B8ED026EB01
+              A8FC42E57FAAF25F76840ED90EC0E57FA2F24F384217590EC0E57FACF24F3AC2
+              06B21B80CA6FA8FCF755FE6B8EB089AC06E0F26755FE5947D842360370F9332A
+              7FC2117A90C5005CFE65953FE9083DCAE5049856F9537E8D3ED47E006559BEA7
+              DBDBEBEFD0AF5A0F40E55FD4937FCE6FB10DB51D803EF32754FE3B7E8B6DAAF3
+              00CEF82576A0CE1F0195EFD881DA0E40C7FF15BFC40ED479001FEA63E05DBFC5
+              36D5F92360A0288A0B1AC1B4DF621B6A3D80442338AFDBA5F577E857ED0760E7
+              7412CCF835FA90C5001A8D46A59F09DED208661DA147B99C00FF8D604A23F8C0
+              117A90CD00128F605223F8C811B690D500128FE04D8DE03347D8447603483482
+              5223785D23F8DC113690E500128FE0B446F085237491ED00128FE0944670D511
+              3A643D804423B8AF11BCAA11A4BF084687EC07906804FF6804AF6804F38E6021
+              0690A411E84A2701FFD3779B300348740AFCAD6B5C235874145EA801243A05EE
+              6904E92F857F5A4F620B3780248DA0AAAAB1B22C7F761456C801243A05EE1645
+              31AE115C771452D801243A09EE6804C734826CBE01A45FA107906804B73582A3
+              1AC1AF8E42093F80248D401F092F6A04371C85C1004C03F84BD7F31AC16F8E42
+              60006D3480555DA31AC1EF8EB2C7003A68002BBA5ED0086E39CA1A03E84203F8
+              53D78846B0E40811555535D46AB59674EFC4174746A0DF0EFED049907E455C76
+              8488D632FEEA58F4482368FFF2E86F1C23128D207D7DFC4DDD8F3B0200000000
+              00000000000000000000000000000000F81F0D0CFC0BD2CEA78CE4A2E0D10000
+              000049454E44AE426082}
             FileName = 'E:\DELPHI\Criando um game mobile em Delphi\Images\back.png'
           end>
         Align = Client
@@ -861,7 +865,7 @@ object frmPrincipal: TfrmPrincipal
       Align = Client
       Margins.Top = 15.000000000000000000
       Margins.Bottom = 15.000000000000000000
-      Size.Width = 114.000000000000000000
+      Size.Width = 73.000000000000000000
       Size.Height = 90.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 2
@@ -870,7 +874,7 @@ object frmPrincipal: TfrmPrincipal
         StyledSettings = [Family]
         Margins.Top = 7.000000000000000000
         Position.Y = 7.000000000000000000
-        Size.Width = 114.000000000000000000
+        Size.Width = 73.000000000000000000
         Size.Height = 17.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
@@ -885,7 +889,7 @@ object frmPrincipal: TfrmPrincipal
         StyledSettings = [Family]
         Margins.Top = 10.000000000000000000
         Margins.Bottom = 5.000000000000000000
-        Size.Width = 114.000000000000000000
+        Size.Width = 73.000000000000000000
         Size.Height = 51.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 28.000000000000000000
@@ -899,12 +903,16 @@ object frmPrincipal: TfrmPrincipal
     end
   end
   object GridLayout: TGridLayout
-    Align = Center
+    Align = Client
     ItemHeight = 70.000000000000000000
     ItemWidth = 70.000000000000000000
     Orientation = Horizontal
-    Size.Width = 289.000000000000000000
-    Size.Height = 399.000000000000000000
+    Margins.Left = 5.000000000000000000
+    Margins.Top = 30.000000000000000000
+    Margins.Right = 5.000000000000000000
+    Margins.Bottom = 20.000000000000000000
+    Size.Width = 320.000000000000000000
+    Size.Height = 432.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
     object Rectangle1: TRectangle
@@ -933,7 +941,7 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         TextSettings.FontColor = xFF383535
         TextSettings.HorzAlign = Center
-        Text = '1'
+        Text = '2'
         TabOrder = 0
         OnDragOver = lblQudrado1DragOver
         OnDragDrop = lblQudrado1DragDrop
@@ -965,8 +973,10 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         TextSettings.FontColor = xFF383535
         TextSettings.HorzAlign = Center
-        Text = '1'
+        Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle3: TRectangle
@@ -983,7 +993,7 @@ object frmPrincipal: TfrmPrincipal
       Stroke.Kind = None
       XRadius = 5.000000000000000000
       YRadius = 5.000000000000000000
-      object Label5: TLabel
+      object lblQuadrado3: TLabel
         Align = Client
         DragMode = dmAutomatic
         StyledSettings = [Family]
@@ -995,8 +1005,10 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         TextSettings.FontColor = xFF383535
         TextSettings.HorzAlign = Center
-        Text = '1'
+        Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle4: TRectangle
@@ -1025,8 +1037,10 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         TextSettings.FontColor = xFF383535
         TextSettings.HorzAlign = Center
-        Text = '1'
+        Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle5: TRectangle
@@ -1055,8 +1069,10 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         TextSettings.FontColor = xFF383535
         TextSettings.HorzAlign = Center
-        Text = '1'
+        Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle6: TRectangle
@@ -1085,8 +1101,10 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         TextSettings.FontColor = xFF383535
         TextSettings.HorzAlign = Center
-        Text = '1'
+        Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle7: TRectangle
@@ -1115,8 +1133,10 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         TextSettings.FontColor = xFF383535
         TextSettings.HorzAlign = Center
-        Text = '1'
+        Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle8: TRectangle
@@ -1145,8 +1165,10 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         TextSettings.FontColor = xFF383535
         TextSettings.HorzAlign = Center
-        Text = '1'
+        Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle9: TRectangle
@@ -1175,8 +1197,10 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         TextSettings.FontColor = xFF383535
         TextSettings.HorzAlign = Center
-        Text = '1'
+        Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle10: TRectangle
@@ -1205,8 +1229,10 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         TextSettings.FontColor = xFF383535
         TextSettings.HorzAlign = Center
-        Text = '1'
+        Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle11: TRectangle
@@ -1235,8 +1261,10 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         TextSettings.FontColor = xFF383535
         TextSettings.HorzAlign = Center
-        Text = '1'
+        Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle12: TRectangle
@@ -1265,8 +1293,10 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         TextSettings.FontColor = xFF383535
         TextSettings.HorzAlign = Center
-        Text = '1'
+        Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle13: TRectangle
@@ -1295,8 +1325,10 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         TextSettings.FontColor = xFF383535
         TextSettings.HorzAlign = Center
-        Text = '1'
+        Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle14: TRectangle
@@ -1325,8 +1357,10 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         TextSettings.FontColor = xFF383535
         TextSettings.HorzAlign = Center
-        Text = '1'
+        Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle15: TRectangle
@@ -1355,8 +1389,10 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         TextSettings.FontColor = xFF383535
         TextSettings.HorzAlign = Center
-        Text = '1'
+        Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle16: TRectangle
@@ -1385,8 +1421,10 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         TextSettings.FontColor = xFF383535
         TextSettings.HorzAlign = Center
-        Text = '1'
+        Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle17: TRectangle
@@ -1415,8 +1453,10 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         TextSettings.FontColor = xFF383535
         TextSettings.HorzAlign = Center
-        Text = '1'
+        Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle18: TRectangle
@@ -1445,8 +1485,10 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         TextSettings.FontColor = xFF383535
         TextSettings.HorzAlign = Center
-        Text = '1'
+        Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle19: TRectangle
@@ -1475,8 +1517,10 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         TextSettings.FontColor = xFF383535
         TextSettings.HorzAlign = Center
-        Text = '1'
+        Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle20: TRectangle
@@ -1505,9 +1549,18 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         TextSettings.FontColor = xFF383535
         TextSettings.HorzAlign = Center
-        Text = '1'
+        Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
+  end
+  object AnimationGame: TFloatAnimation
+    Duration = 1.000000000000000000
+    OnFinish = AnimationGameFinish
+    PropertyName = 'Tag'
+    StartValue = 0.000000000000000000
+    StopValue = 1.000000000000000000
   end
 end

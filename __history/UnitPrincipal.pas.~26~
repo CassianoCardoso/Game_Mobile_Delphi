@@ -11,7 +11,7 @@ uses
   Execute.FMXBasedDragDrop,
   {$ENDIF}
 
-  FMX.StdCtrls, FMX.Ani;
+  FMX.StdCtrls;
 
 type
   TfrmPrincipal = class(TForm)
@@ -65,7 +65,6 @@ type
     Label21: TLabel;
     Rectangle20: TRectangle;
     Label22: TLabel;
-    AnimationGame: TFloatAnimation;
     procedure rectVoltarClick(Sender: TObject);
     procedure lblQudrado1DragDrop(Sender: TObject; const Data: TDragObject;
       const Point: TPointF);
@@ -73,7 +72,6 @@ type
       const Point: TPointF; var Operation: TDragOperation);
     procedure FormShow(Sender: TObject);
     procedure FormResize(Sender: TObject);
-    procedure AnimationGameFinish(Sender: TObject);
   private
     procedure Somarpontos(pontos: integer);
     procedure Reset;
@@ -105,52 +103,18 @@ begin
         rect := TRectangle(GridLayout.Children[i]);
 
         lbl :=TLabel(rect.Children[0]);
-        lbl.Text := '';
-        lbl.Tag := 0;
+        lbl.Text := '2';
+        lbl.Tag := 2;
 
       end;
 
-        AnimationGame.Start;
+
 
 end;
 
 procedure TfrmPrincipal.Somarpontos(pontos : integer);
 begin
      lblPlacar.Text := IntToStr(lblPlacar.Text.ToInteger + pontos);
-end;
-
-procedure TfrmPrincipal.AnimationGameFinish(Sender: TObject);
-var
-    i, cont : integer;
-    lbl: TLabel;
-    arrayNum:  array of Integer;
-begin
-      cont := 0;
-          // i pega o objeto quadrado vazio
-    for i := 0 to GridLayout.ChildrenCount -1 do
-      begin
-        lbl := TLabel(TRectangle(GridLayout.Children[i]).Children[0]);
-
-        if lbl.Tag = 0 then
-        begin
-             Inc(cont);
-             SetLength(arrayNum, cont);
-
-             arrayNum[cont -1] := i;
-        end;
-      end;
-       // se possuir quadrados vazios
-      if cont > 0 then
-      begin
-        i := Random(Length(arrayNum));
-        lbl := TLabel(TRectangle(GridLayout.Children[arrayNum[i]]).Children[0]);
-        lbl.Text := '2';
-        lbl.Tag := 2;
-        AnimationGame.Start;
-      end
-      else
-        ShowMessage('Game Over');
-
 end;
 
 procedure TfrmPrincipal.FormResize(Sender: TObject);
@@ -194,14 +158,13 @@ procedure TfrmPrincipal.lblQudrado1DragOver(Sender: TObject;
 begin
       operation := TDragOperation.None;
 
-     if (Sender is TLabel) and        // onde eu movi(destino)
-         (Data.Source is TLabel) and // quem eu estou arrastando (origem)
+     if (Sender is TLabel) and        // onde u movi(destino)
+         (Data.Source is TLabel) and // quem eu estiu arrastando
          (Data.Source <> Sender) then  // origem <> destino
          begin
-            if (TLabel(Data.Source).Tag = TLabel(Sender).Tag)and
-                (TLabel(Sender).Tag > 0) then
-                Operation := TDragOperation.Move;
-
+             if (TLabel(Data.Source).Tag)= TLabel(Sender).Tag) and
+             (TLabel(Sender).Tag > 0) then
+             Operation := TDragOperation.Move;
          end;
 end;
 

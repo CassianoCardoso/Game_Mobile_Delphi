@@ -5,7 +5,13 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Layouts,
-  FMX.Objects, FMX.Controls.Presentation, FMX.StdCtrls;
+  FMX.Objects, FMX.Controls.Presentation,
+
+  {$IFDEF ANDROID}
+  Execute.FMXBasedDragDrop,
+  {$ENDIF}
+
+  FMX.StdCtrls;
 
 type
   TfrmPrincipal = class(TForm)
@@ -64,7 +70,11 @@ type
       const Point: TPointF);
     procedure lblQudrado1DragOver(Sender: TObject; const Data: TDragObject;
       const Point: TPointF; var Operation: TDragOperation);
+    procedure FormShow(Sender: TObject);
+    procedure FormResize(Sender: TObject);
   private
+    procedure Somarpontos(pontos: integer);
+    procedure Reset;
     { Private declarations }
   public
     { Public declarations }
@@ -77,28 +87,86 @@ implementation
 
 {$R *.fmx}
 
+procedure TfrmPrincipal.Reset;
+ var
+    lbl:Tlabel;
+    rect : TRectangle;
+    i : integer;
+begin
+     lblPlacar.Text := '0';
+     lblLevel.Text := '1';
+
+     //  childrencount conta todos itens dentro do gridlayout
+     for i := 0 to GridLayout.ChildrenCount -1 do
+      if GridLayout.Children[i] is TRectangle then
+      begin
+        rect := TRectangle(GridLayout.Children[i]);
+
+        lbl :=TLabel(rect.Children[0]);
+        lbl.Text := '2';
+        lbl.Tag := 2;
+
+      end;
+
+
+
+end;
+
+procedure TfrmPrincipal.Somarpontos(pontos : integer);
+begin
+     lblPlacar.Text := IntToStr(lblPlacar.Text.ToInteger + pontos);
+end;
+
+procedure TfrmPrincipal.FormResize(Sender: TObject);
+begin
+      // redimensionar o grid
+     GridLayout.ItemWidth := Trunc(GridLayout.Width / 4) - 1;
+     GridLayout.ItemHeight := Trunc(GridLayout.Height /5) - 1;
+end;
+
+procedure TfrmPrincipal.FormShow(Sender: TObject);
+begin
+     Reset ;
+end;
+
 procedure TfrmPrincipal.lblQudrado1DragDrop(Sender: TObject;
   const Data: TDragObject; const Point: TPointF);
   var
      lblorigem, lbldestino : TLabel;
 begin
         //   Move o objeto pra o outro objeto
-    lbldestino := TLabel(Sender);
-    lblorigem := TLabel(Data.Source);
+    lbldestino := TLabel(Sender);   // objeto de destino que vai somar com o outro
+    lblorigem := TLabel(Data.Source);//objeto de origem que arrastei
+
+    if(lblorigem.Tag > 0)and (lbldestino.Tag > 0)then
+    begin
+       SomarPontos(lbldestino.Tag);
+
+       lbldestino.Tag := lbldestino.Tag + lblorigem.Tag;
+       lbldestino.Text := lbldestino.Tag.ToString;
+
+       lblorigem.Tag := 0;
+       lblorigem.Text := '';
 
 
-   lbldestino.Text := IntToStr(lbldestino.Text.ToInteger + lblorigem.Text.ToInteger);
-   lblorigem.Text := '';
-
+    end;
 
 end;
 
 procedure TfrmPrincipal.lblQudrado1DragOver(Sender: TObject;
   const Data: TDragObject; const Point: TPointF; var Operation: TDragOperation);
 begin
-         //
+      operation := TDragOperation.None;
 
-     Operation := TDragOperation.Move;
+     if (Sender is TLabel) and        // onde u movi(destino)
+         (Data.Source is TLabel) and // quem eu estiu arrastando
+         (Data.Source <> Sender) then  // origem <> destino
+         begin
+            if (TLabel(Data.Source).Tag = TLabel(Sender).Tag)and
+                (TLabel(Sender).Tag > 0) then
+                Operation := TDragOperation.Move;
+
+         end;
 end;
 
 procedure TfrmPrincipal.rectVoltarClick(Sender: TObject);

@@ -11,7 +11,7 @@ uses
   Execute.FMXBasedDragDrop,
   {$ENDIF}
 
-  FMX.StdCtrls;
+  FMX.StdCtrls, FMX.Ani;
 
 type
   TfrmPrincipal = class(TForm)
@@ -65,12 +65,15 @@ type
     Label21: TLabel;
     Rectangle20: TRectangle;
     Label22: TLabel;
+    AnimationGame: TFloatAnimation;
     procedure rectVoltarClick(Sender: TObject);
     procedure lblQudrado1DragDrop(Sender: TObject; const Data: TDragObject;
       const Point: TPointF);
     procedure lblQudrado1DragOver(Sender: TObject; const Data: TDragObject;
       const Point: TPointF; var Operation: TDragOperation);
     procedure FormShow(Sender: TObject);
+    procedure FormResize(Sender: TObject);
+    procedure AnimationGameFinish(Sender: TObject);
   private
     procedure Somarpontos(pontos: integer);
     procedure Reset;
@@ -87,14 +90,52 @@ implementation
 {$R *.fmx}
 
 procedure TfrmPrincipal.Reset;
+ var
+    lbl:Tlabel;
+    rect : TRectangle;
+    i : integer;
 begin
      lblPlacar.Text := '0';
      lblLevel.Text := '1';
+
+     //  childrencount conta todos itens dentro do gridlayout
+     for i := 0 to GridLayout.ChildrenCount -1 do
+      if GridLayout.Children[i] is TRectangle then
+      begin
+        rect := TRectangle(GridLayout.Children[i]);
+
+        lbl :=TLabel(rect.Children[0]);
+        lbl.Text := '2';
+        lbl.Tag := 2;
+
+      end;
+
+
+
 end;
 
 procedure TfrmPrincipal.Somarpontos(pontos : integer);
 begin
      lblPlacar.Text := IntToStr(lblPlacar.Text.ToInteger + pontos);
+end;
+
+procedure TfrmPrincipal.AnimationGameFinish(Sender: TObject);
+var
+    i : integer;
+    lbl: TLabel;
+begin
+    for i := 0 to GridLayout.ChildrenCount -1 do
+      begin
+        lbl := TLabel(TRectangle(GridLayout.Children[i]).Children);
+      end;
+
+end;
+
+procedure TfrmPrincipal.FormResize(Sender: TObject);
+begin
+      // redimensionar o grid
+     GridLayout.ItemWidth := Trunc(GridLayout.Width / 4) - 1;
+     GridLayout.ItemHeight := Trunc(GridLayout.Height /5) - 1;
 end;
 
 procedure TfrmPrincipal.FormShow(Sender: TObject);
@@ -108,15 +149,20 @@ procedure TfrmPrincipal.lblQudrado1DragDrop(Sender: TObject;
      lblorigem, lbldestino : TLabel;
 begin
         //   Move o objeto pra o outro objeto
-    lbldestino := TLabel(Sender);
-    lblorigem := TLabel(Data.Source);
+    lbldestino := TLabel(Sender);   // objeto de destino que vai somar com o outro
+    lblorigem := TLabel(Data.Source);//objeto de origem que arrastei
 
-    if(lbldestino.Text <> '')and (lbldestino.Text <> '')then
+    if(lblorigem.Tag > 0)and (lbldestino.Tag > 0)then
     begin
-       lbldestino.Text := IntToStr(lbldestino.Text.ToInteger + lblorigem.Text.ToInteger);
+       SomarPontos(lbldestino.Tag);
+
+       lbldestino.Tag := lbldestino.Tag + lblorigem.Tag;
+       lbldestino.Text := lbldestino.Tag.ToString;
+
+       lblorigem.Tag := 0;
        lblorigem.Text := '';
 
-         SomarPontos(lbldestino.Text.ToInteger);
+
     end;
 
 end;
@@ -124,9 +170,17 @@ end;
 procedure TfrmPrincipal.lblQudrado1DragOver(Sender: TObject;
   const Data: TDragObject; const Point: TPointF; var Operation: TDragOperation);
 begin
-         //
+      operation := TDragOperation.None;
 
-     Operation := TDragOperation.Move;
+     if (Sender is TLabel) and        // onde eu movi(destino)
+         (Data.Source is TLabel) and // quem eu estou arrastando (origem)
+         (Data.Source <> Sender) then  // origem <> destino
+         begin
+            if (TLabel(Data.Source).Tag = TLabel(Sender).Tag)and
+                (TLabel(Sender).Tag > 0) then
+                Operation := TDragOperation.Move;
+
+         end;
 end;
 
 procedure TfrmPrincipal.rectVoltarClick(Sender: TObject);

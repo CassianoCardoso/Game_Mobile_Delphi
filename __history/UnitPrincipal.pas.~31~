@@ -105,12 +105,12 @@ begin
         rect := TRectangle(GridLayout.Children[i]);
 
         lbl :=TLabel(rect.Children[0]);
-        lbl.Text := '';
-        lbl.Tag := 0;
+        lbl.Text := '2';
+        lbl.Tag := 2;
 
       end;
 
-        AnimationGame.Start;
+
 
 end;
 
@@ -125,11 +125,10 @@ var
     lbl: TLabel;
     arrayNum:  array of Integer;
 begin
-      cont := 0;
           // i pega o objeto quadrado vazio
     for i := 0 to GridLayout.ChildrenCount -1 do
       begin
-        lbl := TLabel(TRectangle(GridLayout.Children[i]).Children[0]);
+        lbl := TLabel(TRectangle(GridLayout.Children[i]).Children);
 
         if lbl.Tag = 0 then
         begin
@@ -143,13 +142,7 @@ begin
       if cont > 0 then
       begin
         i := Random(Length(arrayNum));
-        lbl := TLabel(TRectangle(GridLayout.Children[arrayNum[i]]).Children[0]);
-        lbl.Text := '2';
-        lbl.Tag := 2;
-        AnimationGame.Start;
-      end
-      else
-        ShowMessage('Game Over');
+      end;
 
 end;
 

@@ -739,6 +739,7 @@ object frmPrincipal: TfrmPrincipal
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnShow = FormShow
   DesignerMasterStyle = 0
   object lytToolbar: TLayout
     Align = Top
@@ -965,8 +966,10 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         TextSettings.FontColor = xFF383535
         TextSettings.HorzAlign = Center
-        Text = '4'
+        Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle3: TRectangle
@@ -997,6 +1000,8 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.HorzAlign = Center
         Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle4: TRectangle
@@ -1027,6 +1032,8 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.HorzAlign = Center
         Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle5: TRectangle
@@ -1057,6 +1064,8 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.HorzAlign = Center
         Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle6: TRectangle
@@ -1087,6 +1096,8 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.HorzAlign = Center
         Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle7: TRectangle
@@ -1117,6 +1128,8 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.HorzAlign = Center
         Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle8: TRectangle
@@ -1147,6 +1160,8 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.HorzAlign = Center
         Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle9: TRectangle
@@ -1177,6 +1192,8 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.HorzAlign = Center
         Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle10: TRectangle
@@ -1207,6 +1224,8 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.HorzAlign = Center
         Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle11: TRectangle
@@ -1237,6 +1256,8 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.HorzAlign = Center
         Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle12: TRectangle
@@ -1267,6 +1288,8 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.HorzAlign = Center
         Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle13: TRectangle
@@ -1297,6 +1320,8 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.HorzAlign = Center
         Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle14: TRectangle
@@ -1327,6 +1352,8 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.HorzAlign = Center
         Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle15: TRectangle
@@ -1357,6 +1384,8 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.HorzAlign = Center
         Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle16: TRectangle
@@ -1387,6 +1416,8 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.HorzAlign = Center
         Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle17: TRectangle
@@ -1417,6 +1448,8 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.HorzAlign = Center
         Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle18: TRectangle
@@ -1447,6 +1480,8 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.HorzAlign = Center
         Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle19: TRectangle
@@ -1477,6 +1512,8 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.HorzAlign = Center
         Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
     object Rectangle20: TRectangle
@@ -1507,6 +1544,8 @@ object frmPrincipal: TfrmPrincipal
         TextSettings.HorzAlign = Center
         Text = '2'
         TabOrder = 0
+        OnDragOver = lblQudrado1DragOver
+        OnDragDrop = lblQudrado1DragDrop
       end
     end
   end
